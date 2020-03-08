@@ -14,12 +14,12 @@ export default {
     },
     src: {
       type: String,
-      default: require(`@/assets/icons.svg`)
+      default: "https://unpkg.com/feather-icons@4.26.0/dist/feather-sprite.svg"
     }
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .svg-icon {
   display: inline-block;
   width: 1em;
@@ -28,7 +28,13 @@ export default {
   stroke: currentColor;
   fill: currentColor;
 }
+.svg-icon.xs {
+  font-size: 0.5rem;
+}
 .svg-icon.sm {
+  font-size: 0.7rem;
+}
+.svg-icon.md {
   font-size: 1.5rem;
 }
 .svg-icon.lg {
