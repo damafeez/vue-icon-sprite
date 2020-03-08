@@ -1,8 +1,12 @@
 {
-  "name": "vue-feather",
+  "private": false,
+  "name": "vuejs-feather",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An easy-to-use Vue wrapper for the awesome feather icons",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +15,8 @@
     "url": "git+https://github.com/damafeez/vue-feather.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Afeez Awoyemi",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/damafeez/vue-feather/issues"
   },
