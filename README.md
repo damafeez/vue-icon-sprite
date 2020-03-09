@@ -1,6 +1,6 @@
 ## vuejs-feather
 
-An easy-to-use Vue wrapper for the awesome feather icons
+An easy-to-use svg-sprites wrapper for vue
 
 ## Install
 
@@ -11,22 +11,34 @@ yarn add vuejs-feather
 ## Usage
 
 ```js
-// Only import what you need!
-import VueFeather from "vuejs-feather";
+import IconBase from "vuejs-icon-sprite";
 
-Vue.use(VueFeather);
+Vue.use(IconBase);
+// you can also pass an option object with custom name and/or svg-sprite
+Vue.use(IconBase, {
+  as: "MyIconSprites", // default is IconBase
+  src: require("@/assets/where-my-icon-leaves.svg") // location of your svg icon sprites, if you put your sprite in /assets/icons.svg you wouldn't have to specify this
+});
 ```
 
 then do
 
 ```html
-<icon-base name="arrow-right"></icon-base>
+<icon-base name="arrow-right" />
 or
 
-<IconBase name="arrow-left"></IconBase>
-```
+<IconBase name="arrow-left" />
 
-See all icons at (Feather)[https://feathericons.com/]
+or if you specified 'as' in options above, you can do
+
+<my-icon-sprites name="arrow-right" />
+or
+
+<MyIconSprites name="arrow-left" />
+
+you can specify sprite src inline also, like so:
+<icon-base :src="require('@/assets/feather.svg')" name="arrow-right" />
+```
 
 ## Sizes
 
@@ -64,20 +76,6 @@ then define `.blue-icon` class
   color: blue;
 }
 ```
-
-## Tree-shaking
-
-`vuejs-feather` currently does not support tree-shaking and currently ships with all [Feather svg Icons](view-source:https://unpkg.com/feather-icons@4.26.0/dist/feather-sprite.svg) which is around 67kb. We're working to add tree-shaking to only include used icons.
-
-## Worth Mentioning
-
-- `vuejs-feather` is based on [Feather Icons](https://feathericons.com/) but can be extended to use external sprites like so:
-
-```html
-<icon-base name="arrow-right" src="/path-to-sprite.svg"></icon-base>
-```
-
-- I drew inspiration heavily from [vue-feather-icons](https://github.com/damafeez/vue-feather-icons)(might be worth your time to see), I just prefer this approach of importing a light-weight global component and then specifying the `name` of the icon to use, instead of importing them one by one.
 
 ## Contributing
 

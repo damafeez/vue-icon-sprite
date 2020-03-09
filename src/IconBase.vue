@@ -1,23 +1,32 @@
 <template>
   <svg class="svg-icon" v-bind="$attrs" v-on="$listeners">
-    <use :xlink:href="`${src}#${name}`" />
+    <use :xlink:href="`${source}#${name}`" />
   </svg>
 </template>
-
 <script>
 export default {
-  name: "IconBase",
+  name: 'IconBase',
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     src: {
       type: String,
-      default: "https://unpkg.com/feather-icons@4.26.0/dist/feather-sprite.svg"
-    }
-  }
-};
+    },
+  },
+  computed: {
+    source() {
+      if (this.src) return this.src
+      if (this.$IconBaseSrc) return this.$IconBaseSrc
+      try {
+        return require('@/assets/icons.svg')
+      } catch (error) {
+        return console.error('[vue-icon-sprites]: sprites not found')
+      }
+    },
+  },
+}
 </script>
 <style lang="scss" scoped>
 .svg-icon {
@@ -25,6 +34,7 @@ export default {
   width: 1em;
   height: 1em;
   stroke-width: 0;
+  color: inherit;
   stroke: currentColor;
   fill: currentColor;
 }
