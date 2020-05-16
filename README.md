@@ -1,17 +1,17 @@
-## vuejs-feather
+## vue-icon-sprite
 
 An easy-to-use svg-sprites wrapper for vue
 
 ## Install
 
 ```bash
-yarn add vuejs-feather
+yarn add vue-icon-sprite
 ```
 
 ## Usage
 
 ```js
-import IconBase from "vuejs-icon-sprite";
+import IconBase from "vue-icon-sprite";
 
 Vue.use(IconBase);
 // you can also pass an option object with custom name and/or svg-sprite
