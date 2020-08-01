@@ -1,16 +1,15 @@
 {
   "private": false,
   "name": "feather-icons-vue",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Easy to use vue wrapper around feather icons, inheriting color and size from css cascade.",
-  "main": "./dist/index.js",
+  "main": "dist/feather-icons-vue.ssr.js",
+  "browser": "dist/feather-icons-vue.esm.js",
+  "module": "dist/feather-icons-vue.esm.js",
+  "unpkg": "dist/feather-icons-vue.min.js",
   "files": [
     "dist/*"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "bili src/index.js --bundle-node-modules"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/damafeez/vue-feather.git"
@@ -27,12 +26,37 @@
     "url": "https://github.com/damafeez/vue-feather/issues"
   },
   "homepage": "https://github.com/damafeez/vue-feather#readme",
-  "devDependencies": {
-    "bili": "^4.8.1",
-    "rollup-plugin-vue": "^5.1.6",
-    "vue-template-compiler": "^2.6.11"
+  "scripts": {
+    "serve": "vue-cli-service serve dev/serve.js",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
   "dependencies": {
     "feather-icons": "^4.28.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@rollup/plugin-alias": "^2.2.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-replace": "^2.3.2",
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
+    "cross-env": "^7.0.2",
+    "minimist": "^1.2.5",
+    "rollup": "^2.7.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.11"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
