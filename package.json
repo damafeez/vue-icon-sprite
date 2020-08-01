@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "feather-icons-vue",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Easy to use vue wrapper around feather icons, inheriting color and size from css cascade.",
   "main": "dist/feather-icons-vue.ssr.js",
   "browser": "dist/feather-icons-vue.esm.js",
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/damafeez/vue-feather.git"
+    "url": "git+https://github.com/damafeez/feather-icons-vue.git"
   },
   "keywords": [
     "vue",
@@ -23,9 +23,9 @@
   "author": "Afeez Awoyemi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/damafeez/vue-feather/issues"
+    "url": "https://github.com/damafeez/feather-icons-vue/issues"
   },
-  "homepage": "https://github.com/damafeez/vue-feather#readme",
+  "homepage": "https://github.com/damafeez/feather-icons-vue#readme",
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",

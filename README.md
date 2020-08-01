@@ -7,7 +7,7 @@ The whole deal about `feather-icons-vue` is that style context `color and size` 
 <h1 class="blue-text">
   This is a big text with a big icon <icon-base name="arrow-right"></icon-base>
 </h1>
-<!-- Icons is big and has blue color by default because its within an h1 context with blue color. -->
+<!-- Icon is big and has blue color by default because its within an h1 context with blue color. -->
 <!-- Default css cascade/inheritance applies -->
 <!--  -->
 <!-- If you'd explicitly like to have a different colored/sized icon, you can specify icon style with css -->
@@ -46,6 +46,13 @@ Vue.use(IconBase)
 Vue.use(IconBase, {
   as: 'MyIconSprites', // default is IconBase
 })
+// or in specific components
+
+{
+  components: {
+    IconBase
+  }
+}
 ```
 
 then do
@@ -69,7 +76,7 @@ or
 By default, icons will be sized based on the current element's font-size (or propagated parent font-size)
 Simply set the icon font-size as desired (either by adding css or styling directly)
 
-`feather-icons-vue` ships with some default classes (for size), you can apply like so:
+`feather-icons-vue` ships with some default classes (for sizing), you can apply like so:
 
 ```html
 <!-- font-size: 0.5rem -->
@@ -101,7 +108,7 @@ Attributes work also (note this is not a prop, attribute will be attached to roo
 
 ## Colors
 
-By default, icons will take the parent's `color`, you can specifically specify icon color by simply adding a color class, like so:
+By default, icons will take the parent's `color`, you can explicitly specify icon color by simply adding a color class, like so:
 
 ```html
 <!-- font-size: 0.5rem -->
