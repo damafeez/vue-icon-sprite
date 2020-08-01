@@ -1,8 +1,8 @@
 {
   "private": false,
-  "name": "vue-icon-sprite",
+  "name": "feather-icons-vue",
   "version": "1.0.0",
-  "description": "An easy-to-use svg-sprites wrapper for vue",
+  "description": "Easy to use vue wrapper around feather icons, inheriting color and size from css cascade.",
   "main": "./dist/index.js",
   "files": [
     "dist/*"
@@ -31,5 +31,8 @@
     "bili": "^4.8.1",
     "rollup-plugin-vue": "^5.1.6",
     "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "feather-icons": "^4.28.0"
   }
 }
